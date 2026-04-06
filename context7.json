@@ -1,0 +1,12 @@
+{
+  "$schema": "https://context7.com/schema/context7.json",
+  "projectTitle": "Veeam Recovery Orchestrator Docs",
+  "description": "Unofficial documentation dump for Veeam Recovery Orchestrator (VRO). Disaster recovery orchestration documentation including recovery plans, failover testing, and orchestration workflows.",
+  "folders": ["docs"],
+  "excludeFolders": [],
+  "excludeFiles": [],
+  "rules": [
+    "This is unofficial documentation - always verify against official Veeam Help Center",
+    "Focus on recovery plans, failover testing, and orchestration workflows."
+  ]
+}
