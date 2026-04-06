@@ -1,0 +1,60 @@
+---
+title: "Silent Installation File Parameters"
+product: "vro"
+doc_type: "userguide"
+source_url: "https://helpcenter.veeam.com/docs/vro/userguide/unattended_installation_server.html"
+last_updated: "1/19/2026"
+product_version: "13.0.0.1167"
+---
+
+# Silent Installation File Parameters
+
+
+The following command-line options are used to run the silent installation file:
+
+Silent Installation File Parameters
+
+| Option | Parameter | Required | Description |
+| ACCEPT\_EULA | 0/1 | Yes | Specifies if you want to accept the Veeam license agreement.  To accept the license agreement and to proceed with installation, set the parameter value to 1.  Example: ACCEPT\_EULA="1" |
+| ACCEPT\_THIRDPARTY\_LICENSES | 0/1 | Yes | Specifies if you want to accept the license agreement for 3rd party components that Veeam incorporates.  To accept the license agreement and to proceed with installation, set the parameter value to 1.  Example: ACCEPT\_THIRDPARTY\_LICENSES="1" |
+| ACCEPT\_LICENSING\_POLICY | 0/1 | Yes | Specifies if you want to accept the Veeam licensing policy.  To accept the licensing policy and to proceed with installation, set the parameter value to 1.  Example: ACCEPT\_LICENSING\_POLICY="1" |
+| ACCEPT\_REQUIRED\_SOFTWARE | 0/1 | Yes | Specifies if you want to accept the license agreements for each of the required software that Veeam will install.  To accept the license agreement and to proceed with installation, set the parameter value to 1.  Example: ACCEPT\_REQUIRED\_SOFTWARE="1" |
+| VRO\_LICENSE\_FILE | path | Yes | Specifies a full path to the license file. You will not be able to perform installation without providing a license.  Example: VRO\_LICENSE\_FILE="C:\Users\Administrator\Downloads\vro\_nfr.lic" |
+| VRO\_LICENSE\_AUTOUPDATE | 0/1 | No | Specifies if the license is updated automatically. If you do not specify this parameter, automaticlicense update will be enabled by default.  For the Community Edition, NFR and Evaluation licenses, set the parameter value to 1. For licenses without the license ID information, the parameter value to 0.  Example: VRO\_LICENSE\_AUTOUPDATE="1" |
+| VRO\_PROACTIVE\_SUPPORT | 0/1 | No | Specifies if you want to receive proactive support and to enable diagnostic data sharing. If you do not specify this parameter, proactive support will be enabled by default.  For the Community Edition, NFR and Evaluation licenses, set the parameter value to 1. For licenses without the license ID information, the parameter value to 0.  Example: VRO\_PROACTIVE\_SUPPORT="1" |
+| VRO\_SERVICE\_USER | user | Yes | Specifies an account under which the Veeam Orchestrator Server Service will run. For more information on the required account permissions, see [Planning and Preparation](permissions.md).  Along with this parameter, you must define the VRO\_SERVICE\_PASSWORD parameter.  Example: VRO\_SERVICE\_USER="srv\Administrator" |
+| VRO\_SERVICE\_PASSWORD | password | Yes | Specifies a password for the account under which the Veeam Orchestrator Server Service will run.  Example: VRO\_SERVICE\_PASSWORD="1234" |
+| VRO\_SQLSERVER\_INSTALL | 0/1 | Yes | Specifies if an existing Microsoft SQL Server instance will be used to host the Orchestrator database or a new Microsoft SQL Server instance will be created locally.  To create a new Microsoft SQL Server instance, set the parameter value to 1. If you want to use the existing Microsoft SQL Server instance, set this parameter to 0 and define the following parameters for the existing database: VRO\_SQLSERVER\_SERVER and VRO\_SQLSERVER\_DATABASE.  Example: VRO\_SQLSERVER\_INSTALL="1" |
+| VRO\_SQLSERVER\_SERVER | SQL Server\instance | No | Specifies a Microsoft SQL Server instance where the Orchestrator configuration database will be deployed. By default, (local)\VEEAMSQL2017.  Example: VRO\_SQLSERVER\_SERVER="localhost\VEEAMSQL2017" |
+| VRO\_SQLSERVER\_DATABASE | database | No | Specifies a name of the Orchestrator configuration database to be deployed. By default, VeeamOrchestrator.  Example: VRO\_SQLSERVER\_DATABASE="OrchestratorDB" |
+| VBR\_SQLSERVER\_DATABASE | database | No | Specifies a name of the Veeam Backup & Replication configuration database. By default, VeeamBackup.  Keep in mind that both the Veeam ONE configuration database and the Orchestrator database must be hosted on the same Microsoft SQL Server instance.  Example: VBR\_SQLSERVER\_DATABASE="VBR" |
+| VO\_SQLSERVER\_DATABASE | database | No | Specifies a name of the Veeam ONE configuration database.  Keep in mind that both the Veeam ONE configuration database and the Orchestrator database must be hosted on the same Microsoft SQL Server instance.  Example: VO\_SQLSERVER\_DATABASE="VeeamOne" |
+| VRO\_SQLSERVER\_AUTHENTICATION | 0/1 | No | Specifies if you want to use the SQL Server authentication mode to connect to the Microsoft SQL Server where the Orchestrator configuration database is deployed.  To use the SQL Server authentication mode, set the parameter value to 1. If you do not define this parameter, Orchestrator will connect to the Microsoft SQL Server in the Microsoft Windows authentication mode (default value, 0).  Along with this parameter, you must define the following parameters: VRO\_SQLSERVER\_USERNAME and VRO\_SQL\_PASSWORD.  Example: VRO\_SQLSERVER\_AUTHENTICATION="1" |
+| VRO\_SQLSERVER\_USERNAME | user | No | [Applies only if you have defined the VRO\_SQLSERVER\_AUTHENTICATION parameter]  Specifies a LoginID to connect to the Microsoft SQL Server in the SQL Server authentication mode.  Example: VRO\_SQLSERVER\_USERNAME="sa" |
+| VRO\_SQLSERVER\_PASSWORD | password | No | [Applies only if you have defined the VRO\_SQLSERVER\_AUTHENTICATION parameter].  Specifies a password to connect to the Microsoft SQL Server in the SQL Server authentication mode.  Example: VRO\_SQLSERVER\_PASSWORD="1234" |
+| VBR\_ENTRAID\_DATABASE\_INSTALL | 0/1 | No | Specifies if a PostgreSQL Server for the Microsoft Entra ID database will be installed.  To install the PostgreSQL Server for the Microsoft Entra ID, set the parameter value to 1. If you do not define this parameter, the PostgreSQL Server will not be installed (default value, 0). |
+| VO\_POSTGRESQL\_INSTALL | 0/1 | Yes | Specifies if a new PostgreSQL server used for the Veeam ONE reporting database will be installed.  To install a new PostgreSQL database, set the parameter to 1. If you want to use the existing PostgreSQL database, set this parameter to 0 and define the following parameters for the existing database: VO\_POSTGRESQL\_SERVER and VO\_POSTGRESQL\_DATABASE.  Example: VRO\_POSTGRESQL\_INSTALL="1" |
+| VO\_POSTGRESQL\_SERVER | PostgreSQL Server:instance | No | Specifies a PostgreSQL Server instance where the Veeam ONE reporting database will be deployed. By default, (local):5432.  Example: VO\_POSTGRESQL\_SERVER="localhost:5432" |
+| VO\_POSTGRESQL\_DATABASE | database | No | Specifies a name of the Veeam ONE reporting database. By default, VeeamOneWarehouse.  Keep in mind that both the Veeam ONE reporting database and the Orchestrator database must be hosted on the same machine.  Example: VO\_POSTGRESQL\_DATABASE="VeeamOne" |
+| VO\_POSTGRESQL\_AUTHENTICATION | 0/1 | No | Specifies if you want to use the PostgreSQL Server authentication mode to connect to the PostgreSQL Server where the Veeam ONE reporting database is deployed.  To use the PostgreSQL authentication mode, set the parameter value to 1. If you do not define this parameter, Orchestrator will connect to the PostgreSQL Server in the Microsoft Windows authentication mode (default value, 0).  Along with this parameter, you must define the following parameters: VO\_POSTGRESQL\_USERNAME and VO\_POSTGRESQL\_PASSWORD.  Example: VO\_POSTGRESQL\_AUTHENTICATION="1" |
+| VO\_POSTGRESQL\_USERNAME | user | No | [Applies only if you have defined the VO\_POSTGRESQL\_AUTHENTICATION parameter]  Specifies a LoginID to connect to the PostreSQL Server in the PostreSQL Server authentication mode.  Example: VO\_POSTGRESQL\_USERNAME="postgre" |
+| VO\_POSTGRESQL\_PASSWORD | password | No | [Applies only if you have defined the VO\_POSTGRESQL\_AUTHENTICATION parameter].  Specifies a password to connect to the PostreSQL Server in the PostreSQL authentication mode.  Example: VO\_POSTGRESQL\_PASSWORD="1234" |
+| VRO\_SERVICE\_PORT | port | No | Specifies a TCP port that will be used by the Veeam Orchestrator Server Service to connect to Orchestrator agents running on remote Veeam Backup & Replication servers. By default, 8888.  Example: VRO\_SERVICE\_PORT=”8884” |
+| VRO\_SERVICE\_WCF\_PORT | port | No | Specifies a WCF port that will be used to connect to the Veeam Orchestrator Server Service. By default, 12348.  Example: VRO\_SERVICE\_WCF\_PORT=”12247” |
+| VRO\_WEB\_SITE\_PORT | port | No | Specifies an IIS port that will be used to connect to the Orchestrator UI website from a web browser. By default, 9898.  Example: VRO\_WEB\_SITE\_PORT=”9998” |
+| VO\_MONITORING\_SERVICE\_PORT | port | No | Specifies a port that will be used to communicate with the Veeam ONE Monitoring service. By default, 2714.  Example: VO\_MONITORING\_SERVICE\_PORT=”2715” |
+| VO\_CACHING\_SERVICE\_PORT | port | No | Specifies a port that will be used to communicate with Veeam ONE Caching service. By default, 2743.  Example: VO\_CACHING\_SERVICE\_PORT=”2743” |
+| VO\_REPORTING\_SERVICE\_PORT | port | No | Specifies a port that will be used to communicate with Veeam ONE Reporting service. By default, 2742.  Example: VO\_REPORTING\_SERVICE\_PORT=”2745” |
+| VO\_INTERNAL\_WEB\_API\_PORT | port | No | Specifies a port that will be used by Veeam ONE Monitoring service and Veeam ONE Web Services to communicate with Veeam ONE Reporting service. By default, 2741.  Example: VO\_INTERNAL\_WEB\_API\_PORT=”2747” |
+| VO\_WEBSITE\_PORT | port | No | Specifies an IIS port that will be used to connect to the Veeam ONE Web Client from a web browser. By default, 1239.  Example: VO\_WEBSITE\_PORT=”1234” |
+| VO\_AGENT\_SERVICE\_PORT | port | No | Specifies a port that will be used by Veeam Analytics service to collect data from the connected Veeam Backup & Replication servers. By default, 2805.  Example: VO\_AGENT\_SERVICE\_PORT=”2808” |
+| VBRC\_SERVICE\_PORT | port | No | Specifies a TCP port that will be used by the Veeam Guest Catalog Service. By default, 9393.  Example: VBRC\_SERVICE\_PORT=”9394” |
+| VBR\_SERVICE\_PORT | port | No | Specifies a TCP port that will be used by the Veeam Backup Service. By default, 9392.  Example: VBR\_SERVICE\_PORT=”9395” |
+| VBR\_SECURE\_CONNECTIONS\_PORT | port | No | Specifies a TCP port that will be used for communication between the mount server and the backup server. By default, 9401.  Example: VBR\_SECURE\_CONNECTIONS\_PORT=”9402” |
+| VBR\_RESTSERVICE\_PORT | port | No | Specifies an HTTPS port that will be used to connect to the Orchestrator REST API website from a web browser. By default, 9419.  Example: VBR\_RESTSERVICE\_PORT=”9999” |
+| VRO\_CERTIFICATE\_THUMBPRINT | thumbprint | No | Provides a thumbprint of an SSL certificate that will be used to secure traffic between the Orchestrator UI and a web browser.  Example: VRO\_CERTIFICATE\_THUMBPRINT="a909502dd82ae41433e6f83886b00d4277a32a7b" |
+| INSTALLDIR | path | No | Installs the component to the specified location. By default, Orchestrator uses a subfolder in the C:\Program Files\Veeam\Orchestrator\ folder.  Example: INSTALLDIR=”C:\Veeam\” |
+| REBOOT\_IF\_REQUIRED | 0/1 | No | Specifies if the machine where you are installing Orchestrator will be rebooted after the installation process completes.  To reboot the machine, set the parameter to 1. If you do not specify this parameter, the machine will be rebooted automatically.  Example: REBOOT\_IF\_REQUIRED="1" |
+| LOGOFF\_IF\_REQUIRED | 0/1 | No | Specifies if the session is logged off after the installation process completes.  To log off the session, set the parameter to 1. If you do not specify this parameter, the session will not be logged off automatically.  Example: LOGOFF\_IF\_REQUIRED="1" |
+
+
