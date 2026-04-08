@@ -3,7 +3,7 @@ title: "Scheduling Restore"
 product: "vro"
 doc_type: "userguide"
 source_url: "https://helpcenter.veeam.com/docs/vro/userguide/scheduling_restore.html"
-last_updated: "12/26/2025"
+last_updated: "4/8/2026"
 product_version: "13.0.0.1167"
 ---
 
@@ -29,7 +29,7 @@ Right-click the plan name and select Manage > Schedule.
 
 For a plan to be displayed in the list of available plans, it must be ENABLED as described in section [Running and Scheduling Restore Plans](running_restore_plans.md#enablingplans).
 
-1. Set the Malware actions toggle to Enabled if you want to check restore points created for machines included in the plan for malware flags. When restoring to a VMware vSphere environment, you can also decide whether you want to scan these restore points with antivirus software, YARA rules or both. In this case, you must as the default Microsoft Windows-based or Linux-based mount server.
+1. Set the Malware actions toggle to Enabled if you want to check restore points created for machines included in the plan for malware flags. When restoring to a VMware vSphere environment, you can also decide whether you want to scan these restore points with antivirus software, YARA rules or both.
 
 By default, Orchestrator checks the most recent restore point on each machine. If all the restore points are infected, Orchestrator restores the machine to the selected recovery location without connecting it to any network. However, you can instruct Orchestrator to halt the plan and cancel the restore operation if no clean restore point is found.
 
