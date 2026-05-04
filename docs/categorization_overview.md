@@ -3,7 +3,7 @@ title: "Grouping and Categorization"
 product: "vro"
 doc_type: "userguide"
 source_url: "https://helpcenter.veeam.com/docs/vro/userguide/categorization_overview.html"
-last_updated: "11/21/2025"
+last_updated: "5/4/2026"
 product_version: "13.0.0.1167"
 ---
 

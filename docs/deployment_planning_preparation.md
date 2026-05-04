@@ -3,7 +3,7 @@ title: "Planning and Preparation"
 product: "vro"
 doc_type: "userguide"
 source_url: "https://helpcenter.veeam.com/docs/vro/userguide/deployment_planning_preparation.html"
-last_updated: "2/26/2024"
+last_updated: "5/4/2026"
 product_version: "13.0.0.1167"
 ---
 
