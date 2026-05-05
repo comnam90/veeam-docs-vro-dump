@@ -3,7 +3,7 @@ title: "Licensing"
 product: "vro"
 doc_type: "userguide"
 source_url: "https://helpcenter.veeam.com/docs/vro/userguide/licensing.html"
-last_updated: "4/1/2025"
+last_updated: "5/4/2026"
 product_version: "13.0.0.1167"
 ---
 

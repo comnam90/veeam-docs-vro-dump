@@ -3,7 +3,7 @@ title: "Running Plan Readiness Check"
 product: "vro"
 doc_type: "userguide"
 source_url: "https://helpcenter.veeam.com/docs/vro/userguide/running_readiness_check.html"
-last_updated: "11/25/2025"
+last_updated: "5/4/2026"
 product_version: "13.0.0.1167"
 ---
 
@@ -40,7 +40,12 @@ Running Plan Readiness Check Manually
 By default, Orchestrator runs the readiness check automatically for every ENABLED recovery plan daily. To run the check manually for a plan:
 
 1. Navigate to Recovery Plans.
-2. Select the plan and click Check.
+2. Select the plan.
+3. Click Check.
+
+-OR-
+
+From the Publish menu, select Plan Readiness Check.
 
 [![Running Plan Readiness Check](images/readiness_check.webp)](images/readiness_check.webp "Running Plan Readiness Check")
 
