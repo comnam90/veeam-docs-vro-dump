@@ -3,7 +3,7 @@ title: "Permissions"
 product: "vro"
 doc_type: "userguide"
 source_url: "https://helpcenter.veeam.com/docs/vro/userguide/permissions.html"
-last_updated: "1/22/2026"
+last_updated: "5/15/2026"
 product_version: "13.0.0.1167"
 ---
 
@@ -17,7 +17,7 @@ Permissions
 | Account | Required Permission |
 | Setup Account | The account used for product installation must be a domain or local account that has the local Administrator permissions on the target machine. |
 | Orchestrator Service Accounts | The accounts used to run Orchestrator services, Veeam Backup & Replication services and Veeam ONE services must have the local Administrator permissions on the Orchestrator server.  The accounts must also be granted the Log on as a service right. For more information on Windows security policy settings, see [Microsoft Docs](https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/log-on-as-a-service). |
-| Orchestrator Agent Account | The account used to install and run the Orchestrator agent on a Veeam Backup & Replication server must have the local Administrator, the Veeam Backup Administrator and the database Administrator permissions on the server. |
+| Orchestrator Agent Account | The account used to install and run the Orchestrator agent on a Veeam Backup & Replication server must have the local Administrator and the Veeam Backup Administrator permissions on the server. |
 | Orchestrator User Accounts | The accounts used to log in to the Orchestrator UI must be granted the Allow log on locally right. For more information on Windows security policy settings, see [Microsoft Docs](https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/allow-log-on-locally). |
 | vCenter Server Permissions | The account used to connect the vCenter Server to Orchestrator must have administrative permissions. You can either grant the Administrator role to the account or configure more granular permissions. For more information, see [Veeam Backup & Replication Required Permissions](https://helpcenter.veeam.com/docs/vbr/userguide/required_permissions.html?ver=13#using-virtualization-servers-and-hosts) and [Veeam ONE Required Permissions](https://helpcenter.veeam.com/docs/one/userguide/connection_to_virtual_servers.html?ver=13).  To be able to open sessions on the vCenter Server system, the account must also have the Sessions.Validate session privilege on the root vCenter Server. For more information on session privileges, see [VMware Docs](https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-security-8-0/defined-privileges/sessions-privileges.html). |
 | SCVMM Server Permissions | The account used to connect the SCVMM server to Orchestrator must have administrative permissions. You can either grant the Administrator role to the account or configure more granular permissions. For more information, see [Veeam Backup & Replication Required Permissions](https://helpcenter.veeam.com/docs/vbr/userguide/required_permissions.html?ver=13#using-virtualization-servers-and-hosts) and [Veeam ONE Required Permissions](https://helpcenter.veeam.com/docs/one/userguide/connection_to_virtual_servers.html?ver=13#microsoft-scvmm). |
