@@ -3,7 +3,7 @@ title: "Connecting Storage Systems"
 product: "vro"
 doc_type: "userguide"
 source_url: "https://helpcenter.veeam.com/docs/vro/userguide/connecting_storage_systems.html"
-last_updated: "3/12/2026"
+last_updated: "5/6/2026"
 product_version: "13.0.0.1167"
 ---
 
@@ -15,20 +15,25 @@ The following NetApp storage systems must be connected to Orchestrator:
 * Any active storage virtual machine (SVM) that will be the source of the datastore disaster recovery relationship.
 * Any active SVM that will be the destination of the SVM disaster recovery relationship.
 
-|  |
-| --- |
-| Important |
-| Make sure that you have NetApp volumes and virtual volumes protected by storage replication. If you use authentication configured to control access to iSCSI targets, make sure that you define a list of initiators and their authentication methods for all hosts managed by the target vCenter Server. For more information on iSCSI initiator security management, see the [NetApp ONTAP Documentation Center](https://docs.netapp.com/us-en/ontap/data-protection/snapmirror-replication-concept.html). For more information on configuring CHAP parameters for iSCSI adapters, see [VMware Docs](https://docs.vmware.com/en/VMware-vSphere/8.0/vsphere-storage/GUID-AC65D747-728F-4109-96DD-49B433E2F266.html). |
-
 The following HPE storage systems must be connected to Orchestrator:
 
 * Any active storage system that will be the primary system of the remote copy configuration.
 * Any active storage system that will be the secondary system of the remote copy configuration.
 
-|  |
-| --- |
-| Important |
-| Consider the following:   * To connect a NetApp storage system, the ONTAPI REST API (ZAPI) must be enabled. * To connect an HPE storage system, you must first enable the HPE 3PAR Web Services API (WSAPI) server as described in section [Enabling HPE 3PAR Web Services API Server](enabling_web_server.md). * Connecting HPE storage systems paired in synchronous long distance (SLD) Remote Copy configurations is not supported. For more information on SLD configurations, see the [Hewlett Packard Enterprise Support Center](https://support.hpe.com/). |
+Before You Begin
+
+Before you start connecting a storage system, consider the following limitations:
+
+* Make sure that you have NetApp volumes and virtual volumes protected by storage replication.
+* Make sure that you have configured export settings for the replicated storage volumes to allow them to connect to the disaster recovery infrastructure. For more information on export settings, see the [Hewlett Packard Enterprise Support Center](https://support.hpe.com/hpesc/public/docDisplay?docId=a00059923en_us&docLocale=en_US) and [NetApp ONTAP Documentation Center](https://docs.netapp.com/us-en/ontap/nfs-config/add-rule-export-policy-task.html).
+* If you use authentication configured to control access to iSCSI targets, make sure that you define a list of initiators and their authentication methods for all hosts managed by the target vCenter Server.
+
+For more information on iSCSI initiator security management, see the [NetApp ONTAP Documentation Center](https://docs.netapp.com/us-en/ontap/data-protection/snapmirror-replication-concept.html). For more information on configuring CHAP parameters for iSCSI adapters, see [VMware Docs](https://docs.vmware.com/en/VMware-vSphere/8.0/vsphere-storage/GUID-AC65D747-728F-4109-96DD-49B433E2F266.html).
+
+* To connect an HPE storage system, you must enable the HPE 3PAR Web Services API (WSAPI) as described in section [Enabling HPE 3PAR Web Services API Server](enabling_web_server.md). To connect a NetApp storage system, you must enable the ONTAP REST API (ZAPI) as described in section [Enabling NetApp ONTAP API](enabling_netapp_web_server.md).
+* Connecting HPE storage systems paired in synchronous long distance (SLD) Remote Copy configurations is not supported. For more information on SLD configurations, see the [Hewlett Packard Enterprise Support Center](https://support.hpe.com/).
+
+How to Connect Storage Systems
 
 To configure a connection to a storage system:
 
